@@ -206,6 +206,26 @@ DECLSPEC void m17400m (PRIVATE_AS u32 *w0, PRIVATE_AS u32 *w1, PRIVATE_AS u32 *w
     const u32x r2 = l32_from_64 (a02);
     const u32x r3 = h32_from_64 (a02);
 
+    const u64x s0 = a00 ^ (~a01) & a02;
+    const u64x s1 = a01 ^ (~a02) & a03;
+    const u64x s2 = a02 ^ (~a03) & a04;
+    const u64x s3 = a03 ^ (~a04) & a00;
+    const u64x s4 = a04 ^ (~a00) & a01;
+    const u64x s5 = a05 ^ (~a06) & a07;
+    const u64x s6 = a06 ^ (~a07) & a08;
+    const u64x s7 = a07 ^ (~a08) & a09;
+
+    if ((gid == 0) && (lid == 0)) {
+      printf ("%08x\n", s0);
+      printf ("%08x\n", s1);
+      printf ("%08x\n", s2);
+      printf ("%08x\n", s3);
+      printf ("%08x\n", s4);
+      printf ("%08x\n", s5);
+      printf ("%08x\n", s6);
+      printf ("%08x\n", s7);
+    }
+
     COMPARE_M_SIMD (r0, r1, r2, r3);
   }
 }
