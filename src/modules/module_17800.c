@@ -11,10 +11,10 @@
 #include "shared.h"
 
 static const u32   ATTACK_EXEC    = ATTACK_EXEC_INSIDE_KERNEL;
-static const u32   DGST_POS0      = 6;
-static const u32   DGST_POS1      = 7;
-static const u32   DGST_POS2      = 4;
-static const u32   DGST_POS3      = 5;
+static const u32   DGST_POS0      = 2;
+static const u32   DGST_POS1      = 3;
+static const u32   DGST_POS2      = 0;
+static const u32   DGST_POS3      = 1;
 static const u32   DGST_SIZE      = DGST_SIZE_8_25;
 static const u32   HASH_CATEGORY  = HASH_CATEGORY_RAW_HASH;
 static const char *HASH_NAME      = "Keccak-256";
